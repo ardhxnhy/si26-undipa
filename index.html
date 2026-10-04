@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SI '26 Universitas Dipa Makassar — Digital Showcase & Yearbook</title>
+  <meta name="description" content="Digital showcase & yearbook resmi angkatan Sistem Informasi 2026 Universitas Dipa Makassar." />
+  <meta property="og:title" content="SI '26 Universitas Dipa Makassar — Digital Showcase & Yearbook" />
+  <meta property="og:description" content="Digital showcase & yearbook resmi angkatan Sistem Informasi 2026 Universitas Dipa Makassar." />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Favicon (Otomatis aktif jika file assets/images/logo-si.png ditambahkan) -->
+  <link rel="icon" type="image/png" href="./assets/images/logo-si.png" />
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="./css/style.css" />
+</head>
+<body>
+
+  <!-- ==========================================
+       1. NAVIGATION
+       ========================================== -->
+  <header class="header" id="navbar">
+    <div class="container header-inner">
+      <a href="#hero" class="brand" aria-label="SI '26 Home">
+        <img src="./assets/images/logo-si.png" alt="Logo SI '26" class="brand-logo" onerror="this.style.display='none'" />
+        <span>SI '26</span>
+        <span class="brand-badge">UNDIPA</span>
+      </a>
+
+      <!-- Desktop Navigation Links -->
+      <nav class="nav-desktop" aria-label="Navigasi Utama">
+        <a href="#hero" class="nav-link active">Beranda</a>
+        <a href="#about" class="nav-link">Tentang</a>
+        <a href="#students" class="nav-link">Mahasiswa</a>
+        <a href="#organization" class="nav-link">Kepengurusan</a>
+        <a href="#gallery" class="nav-link">Galeri</a>
+        <a href="#announcements" class="nav-link">Pengumuman</a>
+        <a href="#students" class="nav-cta">Direktori</a>
+      </nav>
+
+      <!-- Mobile Hamburger Toggle -->
+      <button type="button" class="mobile-toggle" id="mobileToggle" aria-label="Buka menu navigasi" aria-expanded="false">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Menu -->
+  <div class="mobile-drawer" id="mobileDrawer" aria-label="Navigasi Seluler">
+    <a href="#hero" class="mobile-link">Beranda</a>
+    <a href="#about" class="mobile-link">Tentang</a>
+    <a href="#students" class="mobile-link">Mahasiswa</a>
+    <a href="#organization" class="mobile-link">Kepengurusan</a>
+    <a href="#gallery" class="mobile-link">Galeri</a>
+    <a href="#announcements" class="mobile-link">Pengumuman</a>
+    <a href="#quicklinks" class="mobile-link">Tautan Cepat</a>
+    <a href="#students" class="mobile-cta">Jelajahi Mahasiswa</a>
+  </div>
+
+  <main id="mainContent">
+
+    <!-- ==========================================
+         2. HERO SECTION
+         ========================================== -->
+    <section class="hero" id="hero">
+      <div class="hero-glow" aria-hidden="true"></div>
+      <div class="container">
+        <div class="hero-tag">
+          <span class="hero-tag-dot" aria-hidden="true"></span>
+          <span>Sistem Informasi 2026</span>
+        </div>
+        <h1 class="hero-title-main">SI '26</h1>
+        <h2 class="hero-subtitle">Sistem Informasi 2026</h2>
+        <div class="hero-univ">Universitas Dipa Makassar</div>
+        <p class="hero-tagline">"Satu Angkatan. Satu Cerita. Rumah Digital Kita."</p>
+        <div class="hero-actions">
+          <a href="#students" class="btn btn-primary">
+            <span>Jelajahi Mahasiswa</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M5 12h14M12 5l7 7-7 7"></path>
+            </svg>
+          </a>
+          <a href="#about" class="btn btn-secondary">
+            <span>Tentang SI '26</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         3. STATISTICS SECTION
+         ========================================== -->
+    <section class="stats-section" id="statistics" aria-label="Statistik Angkatan">
+      <div class="container">
+        <div class="stats-grid">
+          <div class="stat-item">
+            <div class="stat-number" id="statTotalStudents">112</div>
+            <div class="stat-label">Mahasiswa</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">1</div>
+            <div class="stat-label">Program Studi</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">SI '26</div>
+            <div class="stat-label">Angkatan</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">2026</div>
+            <div class="stat-label">Tumbuh Bersama</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         4. ABOUT SECTION
+         ========================================== -->
+    <section class="section" id="about">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-kicker">Tentang Angkatan</div>
+          <h2 class="section-title">Satu Angkatan, Satu Rumah Digital</h2>
+          <p class="section-subtitle">
+            Ruang digital yang dirancang untuk mengabadikan perjalanan, merayakan individu, dan menghubungkan seluruh rekan angkatan.
+          </p>
+        </div>
+
+        <div class="about-card">
+          <div class="about-quote">
+            "Ruang ini akan terus bertumbuh bersama cerita dan karya kita."
+          </div>
+          <p class="about-body">
+            Selamat datang di digital showcase dan direktori resmi angkatan Sistem Informasi 2026 (SI '26) Universitas Dipa Makassar. Di sinilah identitas, karya, perjalanan akademik, dan kebersamaan 112 mahasiswa terangkum secara rapi dan bermakna. Seiring berjalannya semester, platform ini akan terus diperkaya dengan karya, dokumentasi, dan pencapaian kolektif kita bersama.
+          </p>
+          <div class="about-note">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"></circle>
+              <line x1="12" y1="16" x2="12" y2="12"></line>
+              <line x1="12" y1="8" x2="12.01" y2="8"></line>
+            </svg>
+            <span>Platform ini didesain sebagai arsip hidup yang dapat diperbarui secara mandiri oleh mahasiswa.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         5. KETUA PRODI SECTION
+         ========================================== -->
+    <section class="section" id="prodi">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-kicker">Program Studi</div>
+          <h2 class="section-title">Ketua Program Studi</h2>
+          <p class="section-subtitle">
+            Pimpinan Program Studi Sistem Informasi Universitas Dipa Makassar.
+          </p>
+        </div>
+
+        <div id="prodiContainer">
+          <!-- Dirender dinamis dari js/app.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         6. STRUKTUR ANGKATAN
+         ========================================== -->
+    <section class="section" id="organization">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-kicker">Kepengurusan</div>
+          <h2 class="section-title">Struktur Angkatan</h2>
+          <p class="section-subtitle">
+            Susunan kepengurusan angkatan SI '26 yang sedang dalam tahap persiapan.
+          </p>
+        </div>
+
+        <div class="org-grid" id="organizationGrid">
+          <!-- Dirender dinamis dari js/app.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         7. STUDENT DIRECTORY (FITUR UTAMA)
+         ========================================== -->
+    <section class="section" id="students">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-kicker">Direktori Angkatan</div>
+          <h2 class="section-title">Direktori Mahasiswa</h2>
+          <p class="section-subtitle">
+            Mengenal 112 mahasiswa angkatan Sistem Informasi 2026 Universitas Dipa Makassar.
+          </p>
+        </div>
+
+        <!-- Directory Controls (Search & Filter) -->
+        <div class="directory-controls">
+          <div class="search-bar-wrapper">
+            <svg class="search-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+            <input
+              type="text"
+              id="studentSearch"
+              class="search-input"
+              placeholder="Cari berdasarkan nama, NIM, atau panggilan... (Tekan '/' untuk mencari)"
+              aria-label="Cari mahasiswa"
+              autocomplete="off"
+            />
+            <button type="button" id="searchClearBtn" class="search-clear-btn" aria-label="Hapus kata pencarian">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+              </svg>
+            </button>
+          </div>
+
+          <div class="filter-row">
+            <div class="filter-pills" id="classFilters" aria-label="Filter berdasarkan kelas">
+              <!-- Filter tombol kelas dibuat dinamis oleh js/app.js -->
+            </div>
+            <div class="results-count" id="resultsCount">
+              Memuat data mahasiswa...
+            </div>
+          </div>
+        </div>
+
+        <!-- Student Cards Grid -->
+        <div class="students-grid" id="studentsGrid">
+          <!-- 112 Mahasiswa dirender oleh js/app.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         8. GALLERY SECTION
+         ========================================== -->
+    <section class="section" id="gallery">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-kicker">Dokumentasi & Kenangan</div>
+          <h2 class="section-title">Galeri Kenangan</h2>
+          <p class="section-subtitle">
+            Arsip visual perjalanan, kebersamaan, dan momen penting angkatan SI '26.
+          </p>
+        </div>
+
+        <div class="gallery-grid" id="galleryGrid">
+          <!-- Dirender dinamis oleh js/app.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         9. ANNOUNCEMENTS SECTION
+         ========================================== -->
+    <section class="section" id="announcements">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-kicker">Pemberitahuan</div>
+          <h2 class="section-title">Pengumuman Angkatan</h2>
+          <p class="section-subtitle">
+            Pembaruan informasi terkini seputar kegiatan dan perkembangan angkatan.
+          </p>
+        </div>
+
+        <div class="announcements-list" id="announcementsList">
+          <!-- Dirender dinamis oleh js/app.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         10. QUICK LINKS SECTION
+         ========================================== -->
+    <section class="section" id="quicklinks">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-kicker">Akses Cepat</div>
+          <h2 class="section-title">Tautan Cepat</h2>
+          <p class="section-subtitle">
+            Tautan penting untuk koordinasi, media sosial, dan berkas akademik angkatan.
+          </p>
+        </div>
+
+        <div class="quicklinks-grid" id="quicklinksGrid">
+          <!-- Dirender dinamis oleh js/app.js -->
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==========================================
+       11. FOOTER
+       ========================================== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="footer-logos">
+            <img src="./assets/images/logo-si.png" alt="Logo SI '26" class="footer-logo" onerror="this.style.display='none'" />
+            <img src="./assets/images/logo-undipa.png" alt="Logo Universitas Dipa Makassar" class="footer-logo" onerror="this.style.display='none'" />
+          </div>
+          <h3>SI '26</h3>
+          <p>
+            Sistem Informasi 2026 — Universitas Dipa Makassar.<br />
+            Buku Kenangan Digital & Direktori resmi angkatan 2026.
+          </p>
+        </div>
+        <div class="footer-nav">
+          <div class="footer-nav-col">
+            <span class="footer-nav-title">Navigasi</span>
+            <a href="#hero" class="footer-link">Beranda</a>
+            <a href="#about" class="footer-link">Tentang SI '26</a>
+            <a href="#students" class="footer-link">Direktori Mahasiswa</a>
+            <a href="#organization" class="footer-link">Struktur Angkatan</a>
+          </div>
+          <div class="footer-nav-col">
+            <span class="footer-nav-title">Koleksi</span>
+            <a href="#gallery" class="footer-link">Galeri</a>
+            <a href="#announcements" class="footer-link">Pengumuman</a>
+            <a href="#quicklinks" class="footer-link">Tautan Cepat</a>
+          </div>
+          <div class="footer-nav-col">
+            <span class="footer-nav-title">Media & Komunitas</span>
+            <a href="https://www.instagram.com/si26undipa/?utm_source=ig_web_button_share_sheet" target="_blank" rel="noopener noreferrer" class="footer-link">Instagram @si26undipa</a>
+            <a href="https://chat.whatsapp.com/FOdYroWLYSIEndjERZOq99?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAZXh0bgNhZW0CMTEAcGRvZgJzcnRjBmFwcF9pZA85MzY2MTk3NDMzOTI0NTkAAac2sROvwj2NEFNZxo9dw_iIxKVpuP4wW4o6HOZxxyaJWs9B7E3GK7QlNEpKpw_aem_mgEwFmdwQ9GSO3iCzYYcOQ" target="_blank" rel="noopener noreferrer" class="footer-link">Grup WhatsApp</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          &copy; 2026 SI '26 Universitas Dipa Makassar. Hak cipta dilindungi.
+        </div>
+        <a href="#hero" class="footer-back-to-top" aria-label="Kembali ke atas">
+          <span>Kembali ke Atas</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M18 15l-6-6-6 6"></path>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==========================================
+       STUDENT DETAIL MODAL
+       ========================================== -->
+  <div class="modal-overlay" id="studentModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modalStudentTitle">
+    <div class="modal-container">
+      <button type="button" class="modal-close-btn" id="modalCloseBtn" aria-label="Tutup detail mahasiswa">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+      <div id="modalBody">
+        <!-- Konten profil mahasiswa dirender oleh js/app.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="./js/data.js"></script>
+  <script src="./js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" width="100%" height="100%">
+  <defs>
+    <linearGradient id="galgrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e293b" />
+      <stop offset="100%" stop-color="#0f172a" />
+    </linearGradient>
+  </defs>
+  <rect width="600" height="400" fill="url(#galgrad)" />
+  <rect x="250" y="150" width="100" height="80" rx="10" fill="none" stroke="#475569" stroke-width="4" />
+  <circle cx="275" cy="175" r="8" fill="#475569" />
+  <polygon points="260,215 285,190 310,215 325,200 340,215" fill="#475569" />
+  <text x="300" y="270" text-anchor="middle" fill="#64748b" font-family="-apple-system, sans-serif" font-size="16" font-weight="600">Our story is coming soon</text>
+</svg>
