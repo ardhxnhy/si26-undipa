@@ -1,0 +1,524 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SI '26 — Digital Yearbook | Universitas Dipa Makassar</title>
+    <meta
+      name="description"
+      content="Digital yearbook & showcase resmi Sistem Informasi 2026 (SI '26) Universitas Dipa Makassar. Minimalist, monochrome, editorial."
+    />
+    <meta property="og:title" content="SI '26 — Digital Yearbook | Universitas Dipa Makassar" />
+    <meta
+      property="og:description"
+      content="A minimalist digital home for SI '26. Menghubungkan 112 mahasiswa Sistem Informasi 2026 Universitas Dipa Makassar."
+    />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <!-- Favicon / Minimal Monogram -->
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90' font-weight='900' fill='white'>'26</text></svg>"
+    />
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="./css/style.css" />
+
+    <!-- Anti-FOUC Theme & Language Initialization Script -->
+    <script>
+      (function () {
+        try {
+          var savedTheme = localStorage.getItem("si26-theme") || localStorage.getItem("si26_theme");
+          if (savedTheme === "light" || savedTheme === "dark") {
+            document.documentElement.setAttribute("data-theme", savedTheme);
+          } else if (window.matchMedia && window.matchMedia("(prefers-color-scheme: light)").matches) {
+            document.documentElement.setAttribute("data-theme", "light");
+          } else {
+            document.documentElement.setAttribute("data-theme", "dark");
+          }
+
+          var savedLang = localStorage.getItem("si26-language") || localStorage.getItem("si26_lang");
+          if (savedLang === "en" || savedLang === "id") {
+            document.documentElement.setAttribute("lang", savedLang);
+          } else {
+            document.documentElement.setAttribute("lang", "id");
+          }
+        } catch (e) {}
+      })();
+    </script>
+  </head>
+  <body>
+    <!-- Top Navigation -->
+    <header class="nav-header">
+      <div class="container nav-container">
+        <!-- Zone 1: Wordmark & Insignia -->
+        <a href="#hero" class="nav-brand" aria-label="SI 26 Home">
+          <span class="nav-logos">
+            <img src="./assets/images/logos/undipa.svg" alt="Logo UNDIPA" class="nav-logo-img" />
+            <img src="./assets/images/logos/sistem_informasi.svg" alt="Logo Sistem Informasi" class="nav-logo-img" />
+          </span>
+          <span>SI '26</span>
+        </a>
+
+        <!-- Zone 2: Navigation Links -->
+        <nav class="nav-links" aria-label="Navigasi Utama">
+          <a href="#about" class="nav-link" data-i18n="nav.about">About</a>
+          <a href="#organization" class="nav-link" data-i18n="nav.structure">Structure</a>
+          <a href="#people" class="nav-link" data-i18n="nav.people">People</a>
+          <a href="#gallery" class="nav-link" data-i18n="nav.gallery">Gallery</a>
+          <a href="#updates" class="nav-link" data-i18n="nav.updates">Updates</a>
+        </nav>
+
+        <!-- Zone 3: Affiliation Pill & Actions -->
+        <div class="nav-actions-group">
+          <div class="nav-action">
+            <span class="nav-action-pill" data-i18n="hero.institutionTitle">Universitas Dipa Makassar</span>
+          </div>
+
+          <!-- Language Switcher Segmented Control (ID / EN) -->
+          <div class="lang-switcher" role="group" aria-label="Pilih Bahasa / Select Language">
+            <button
+              type="button"
+              class="lang-btn is-active"
+              id="lang-btn-id"
+              data-lang="id"
+              aria-label="Bahasa Indonesia"
+              aria-pressed="true"
+            >ID</button>
+            <button
+              type="button"
+              class="lang-btn"
+              id="lang-btn-en"
+              data-lang="en"
+              aria-label="English"
+              aria-pressed="false"
+            >EN</button>
+          </div>
+
+          <!-- Dark / Light Mode Toggle Button -->
+          <button
+            type="button"
+            class="theme-toggle-btn"
+            id="theme-toggle"
+            aria-label="Ganti mode tema (Gelap/Terang)"
+            aria-pressed="false"
+            title="Ganti mode tema"
+          >
+            <!-- Sun icon (shown in dark mode to switch to light) -->
+            <svg class="theme-icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="12" cy="12" r="5"></circle>
+              <line x1="12" y1="1" x2="12" y2="3"></line>
+              <line x1="12" y1="21" x2="12" y2="23"></line>
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+              <line x1="1" y1="12" x2="3" y2="12"></line>
+              <line x1="21" y1="12" x2="23" y2="12"></line>
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+            </svg>
+            <!-- Moon icon (shown in light mode to switch to dark) -->
+            <svg class="theme-icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+            </svg>
+          </button>
+
+          <!-- Mobile Menu Toggle Button -->
+          <button
+            type="button"
+            class="nav-mobile-toggle"
+            id="mobile-toggle"
+            aria-label="Toggle menu navigasi"
+            aria-expanded="false"
+          >
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="3" y1="12" x2="21" y2="12"></line>
+              <line x1="3" y1="6" x2="21" y2="6"></line>
+              <line x1="3" y1="18" x2="21" y2="18"></line>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile Navigation Drawer -->
+      <nav class="mobile-menu" id="mobile-menu" aria-label="Navigasi Mobile">
+        <div class="mobile-theme-row">
+          <span data-i18n="nav.themeTitle">Mode Tampilan</span>
+          <button type="button" class="mobile-theme-btn" id="mobile-theme-toggle" aria-label="Ganti mode tema">
+            <span class="mobile-theme-icon-wrap" aria-hidden="true">
+              <svg class="theme-icon-sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="5"></circle>
+                <line x1="12" y1="1" x2="12" y2="3"></line>
+                <line x1="12" y1="21" x2="12" y2="23"></line>
+                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                <line x1="1" y1="12" x2="3" y2="12"></line>
+                <line x1="21" y1="12" x2="23" y2="12"></line>
+                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+              </svg>
+              <svg class="theme-icon-moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+              </svg>
+            </span>
+            <span id="mobile-theme-text">Dark Mode</span>
+          </button>
+        </div>
+        <div class="mobile-lang-row">
+          <span data-i18n="nav.langTitle">Bahasa / Language</span>
+          <div class="lang-switcher" role="group" aria-label="Pilih Bahasa / Select Language">
+            <button type="button" class="lang-btn is-active" id="mobile-lang-btn-id" data-lang="id" aria-label="Bahasa Indonesia" aria-pressed="true">ID</button>
+            <button type="button" class="lang-btn" id="mobile-lang-btn-en" data-lang="en" aria-label="English" aria-pressed="false">EN</button>
+          </div>
+        </div>
+        <a href="#about" class="mobile-nav-link" data-i18n="nav.about">About</a>
+        <a href="#organization" class="mobile-nav-link" data-i18n="nav.structure">Structure</a>
+        <a href="#people" class="mobile-nav-link" data-i18n="nav.people">People</a>
+        <a href="#gallery" class="mobile-nav-link" data-i18n="nav.gallery">Gallery</a>
+        <a href="#updates" class="mobile-nav-link" data-i18n="nav.updates">Updates & Links</a>
+        <a
+          href="https://chat.whatsapp.com/FOdYroWLYSIEndjERZOq99?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAZXh0bgNhZW0CMTEAcGRvZgJzcnRjBmFwcF9pZA85MzY2MTk3NDMzOTI0NTkAAac2sROvwj2NEFNZxo9dw_iIxKVpuP4wW4o6HOZxxyaJWs9B7E3GK7QlNEpKpw_aem_mgEwFmdwQ9GSO3iCzYYcOQ"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="mobile-nav-link"
+        >
+          <span data-i18n="nav.waGroup">WhatsApp Group SI '26</span>
+          <span aria-hidden="true">↗</span>
+        </a>
+        <a
+          href="https://www.instagram.com/si26undipa/?utm_source=ig_web_button_share_sheet"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="mobile-nav-link"
+        >
+          <span data-i18n="nav.igAngkatan">Instagram @si26undipa</span>
+          <span aria-hidden="true">↗</span>
+        </a>
+      </nav>
+    </header>
+
+    <main>
+      <!-- Hero Section -->
+      <section class="hero" id="hero" aria-label="Hero Section">
+        <div class="container hero-content">
+          <!-- Institutional Insignia -->
+          <div class="hero-logos-wrapper">
+            <div class="hero-logo-box">
+              <img src="./assets/images/logos/undipa.svg" alt="Logo Universitas Dipa Makassar" class="hero-logo-img" />
+              <div class="hero-logo-caption">
+                <span class="hero-logo-title" data-i18n="hero.institutionTitle">Universitas Dipa Makassar</span>
+                <span class="hero-logo-sub" data-i18n="hero.institutionSub">Kampus Teknologi</span>
+              </div>
+            </div>
+            <div class="hero-logo-divider" aria-hidden="true"></div>
+            <div class="hero-logo-box">
+              <img src="./assets/images/logos/sistem_informasi.svg" alt="Logo Program Studi Sistem Informasi" class="hero-logo-img" />
+              <div class="hero-logo-caption">
+                <span class="hero-logo-title" data-i18n="hero.prodiTitle">Program Studi Sistem Informasi</span>
+                <span class="hero-logo-sub" data-i18n="hero.prodiSub">Cohort 2026</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-badge-line">
+            <span data-i18n="hero.badge">Sistem Informasi · Angkatan 2026</span>
+          </div>
+
+          <h1 class="hero-title" data-i18n="hero.title">SI '26</h1>
+
+          <p class="hero-subtitle" data-i18n="hero.subtitle">
+            One Cohort. One Story.
+          </p>
+
+          <p class="hero-institution" data-i18n="hero.description">
+            Ruang arsip digital dan etalase resmi 112 mahasiswa Sistem Informasi angkatan 2026, Universitas Dipa Makassar.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#people" class="btn-primary">
+              <span data-i18n="hero.exploreBtn">Explore People (112)</span>
+              <span aria-hidden="true">↓</span>
+            </a>
+            <a
+              href="https://chat.whatsapp.com/FOdYroWLYSIEndjERZOq99?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAZXh0bgNhZW0CMTEAcGRvZgJzcnRjBmFwcF9pZA85MzY2MTk3NDMzOTI0NTkAAac2sROvwj2NEFNZxo9dw_iIxKVpuP4wW4o6HOZxxyaJWs9B7E3GK7QlNEpKpw_aem_mgEwFmdwQ9GSO3iCzYYcOQ"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn-secondary"
+            >
+              <span data-i18n="hero.waBtn">WhatsApp Group</span>
+              <span aria-hidden="true">↗</span>
+            </a>
+            <a
+              href="https://www.instagram.com/si26undipa/?utm_source=ig_web_button_share_sheet"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn-secondary"
+            >
+              <span data-i18n="hero.igBtn">Instagram @si26undipa</span>
+              <span aria-hidden="true">↗</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Statistics Section Strip -->
+      <section class="stats-strip" aria-label="Statistik Angkatan">
+        <div class="container">
+          <div class="stats-grid">
+            <div class="stat-item">
+              <div class="stat-value tabular-nums">112</div>
+              <div class="stat-label" data-i18n="stats.studentsLabel">Students</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-value">SI '26</div>
+              <div class="stat-label" data-i18n="stats.cohortLabel">Cohort</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-value tabular-nums">01</div>
+              <div class="stat-label" data-i18n="stats.programLabel">Program</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 01: About & Ketua Program Studi -->
+      <section class="section" id="about" aria-label="Tentang Angkatan">
+        <div class="container">
+          <div class="about-grid">
+            <div class="about-prose">
+              <p class="section-kicker" data-i18n="about.kicker">01 — ABOUT COHORT</p>
+              <h2 class="section-title" data-i18n="about.title">A year worth remembering.</h2>
+              <p class="section-description" data-i18n="about.p1">
+                Ruang arsip digital dan etalase resmi angkatan 2026 Program Studi Sistem Informasi, Universitas Dipa Makassar. Dibuat sebagai titik temu sederhana nan abadi untuk merawat setiap jejak langkah, kolaborasi, dan nama yang bertumbuh bersama.
+              </p>
+              <p class="section-description" data-i18n="about.p2">
+                Dari ruang kuliah hingga lorong kampus, 112 cerita berjalan beriringan menuju cita-cita di bidang teknologi dan sistem informasi.
+              </p>
+            </div>
+
+            <!-- Ketua Program Studi Card -->
+            <div id="prodi-container">
+              <!-- Rendered via JS -->
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 02: Organization Structure -->
+      <section class="section" id="organization" aria-label="Struktur Organisasi Angkatan">
+        <div class="container">
+          <div class="section-header">
+            <p class="section-kicker" data-i18n="leadership.kicker">02 — LEADERSHIP</p>
+            <h2 class="section-title" data-i18n="leadership.title">Struktur Angkatan</h2>
+            <p class="section-description" data-i18n="leadership.description">
+              Susunan kepengurusan angkatan SI '26 yang akan menaungi koordinasi, kegiatan, dan solidaritas bersama selama masa perkuliahan.
+            </p>
+          </div>
+
+          <div class="org-grid" id="org-grid">
+            <!-- Rendered via JS -->
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 03: Students Directory (Core Experience) -->
+      <section class="section" id="people" aria-label="Direktori Mahasiswa">
+        <div class="container">
+          <div class="section-header">
+            <p class="section-kicker" data-i18n="directory.kicker">03 — PEOPLE</p>
+            <h2 class="section-title" data-i18n="directory.title">The 112 Faces of SI '26</h2>
+            <p class="section-description" data-i18n="directory.description">
+              Daftar lengkap seluruh mahasiswa Program Studi Sistem Informasi Angkatan 2026 Universitas Dipa Makassar.
+            </p>
+          </div>
+
+          <!-- Search & Filter Controls -->
+          <div class="directory-controls">
+            <!-- Search Bar -->
+            <div class="search-box">
+              <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              </svg>
+              <input
+                type="text"
+                id="search-input"
+                class="search-input"
+                placeholder="Cari nama, NIM, atau panggilan..."
+                data-i18n-placeholder="directory.searchPlaceholder"
+                data-i18n-aria="directory.searchPlaceholder"
+                autocomplete="off"
+                spellcheck="false"
+                aria-label="Cari nama, NIM, atau panggilan..."
+              />
+              <button type="button" id="search-clear" class="search-clear" aria-label="Hapus pencarian" data-i18n-aria="directory.clearSearchAria">✕</button>
+            </div>
+
+            <!-- Dynamic Class Filter Tabs -->
+            <div class="filter-group" id="filter-group" role="group" aria-label="Filter Kelas">
+              <!-- Rendered via JS -->
+            </div>
+          </div>
+
+          <!-- Directory Count Bar -->
+          <div class="directory-meta-bar">
+            <span id="students-count">Menampilkan 112 dari 112 mahasiswa</span>
+            <span class="tabular-nums">NIM 261001 – 261112</span>
+          </div>
+
+          <!-- Grid of Students -->
+          <div class="students-grid" id="students-grid">
+            <!-- Rendered via JS -->
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 04: Visual Archive / Gallery -->
+      <section class="section" id="gallery" aria-label="Dokumentasi dan Galeri Kegiatan">
+        <div class="container">
+          <div class="section-header">
+            <p class="section-kicker" data-i18n="gallery.kicker">04 — VISUAL ARCHIVE</p>
+            <h2 class="section-title" data-i18n="gallery.title">Moments & Memories</h2>
+            <p class="section-description" data-i18n="gallery.description">
+              Dokumentasi visual perjalanan dan memori bersama selama menempuh perkuliahan di Universitas Dipa Makassar.
+            </p>
+          </div>
+
+          <div id="gallery-container">
+            <!-- Rendered via JS -->
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 05: Updates & Quick Links -->
+      <section class="section" id="updates" aria-label="Pengumuman dan Tautan Eksternal">
+        <div class="container">
+          <div class="updates-grid">
+            <!-- Announcements -->
+            <div class="announcements-column">
+              <div class="section-header" style="margin-bottom: 1.5rem;">
+                <p class="section-kicker" data-i18n="updates.kicker">05 — NOTICE BOARD</p>
+                <h2 class="section-title" style="font-size: 1.75rem;" data-i18n="updates.title">Announcements</h2>
+                <p class="section-description" data-i18n="updates.description">
+                  Kabar dan pemberitahuan penting untuk angkatan SI '26.
+                </p>
+              </div>
+
+              <div id="announcements-list">
+                <!-- Rendered via JS -->
+              </div>
+            </div>
+
+            <!-- Quick Links -->
+            <div class="quicklinks-column">
+              <div class="section-header" style="margin-bottom: 1.5rem;">
+                <p class="section-kicker" data-i18n="updates.quickLinksKicker">RESOURCES</p>
+                <h2 class="section-title" style="font-size: 1.75rem;" data-i18n="updates.quickLinksTitle">Quick Links</h2>
+                <p class="section-description" data-i18n="updates.quickLinksDesc">
+                  Tautan direktori eksternal angkatan SI '26.
+                </p>
+              </div>
+
+              <div class="quick-links-list" id="quick-links-list">
+                <!-- Rendered via JS -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Student Detail Modal (Apple HIG Profile Viewer / Sheet) -->
+    <div
+      class="modal-backdrop"
+      id="student-modal"
+      role="dialog"
+      aria-modal="true"
+      aria-hidden="true"
+      tabindex="-1"
+    >
+      <div class="modal-container">
+        <!-- Close Button -->
+        <button type="button" class="modal-close-btn" id="modal-close" aria-label="Tutup detail profil" data-i18n-aria="modal.closeAria">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+
+        <!-- Left: Large Photo -->
+        <div class="modal-photo-pane">
+          <img id="modal-photo" class="modal-photo" src="" alt="" />
+        </div>
+
+        <!-- Right: Structured Profile Pane -->
+        <div class="modal-info-pane">
+          <div class="modal-header-meta">
+            <span class="modal-nim-tag tabular-nums" id="modal-nim">NIM 261001</span>
+            <h2 class="modal-name" id="modal-name">Nama Mahasiswa</h2>
+            <p class="modal-nickname" id="modal-nickname" style="display: none;"></p>
+          </div>
+
+          <div class="modal-details-list">
+            <div class="modal-detail-row">
+              <span class="modal-detail-label" data-i18n="modal.prodiLabel">Program Studi</span>
+              <span class="modal-detail-value" data-i18n="modal.prodiValue">Sistem Informasi</span>
+            </div>
+            <div class="modal-detail-row">
+              <span class="modal-detail-label" data-i18n="modal.cohortLabel">Angkatan</span>
+              <span class="modal-detail-value">2026</span>
+            </div>
+            <div class="modal-detail-row">
+              <span class="modal-detail-label" data-i18n="modal.classLabel">Kelas</span>
+              <span class="modal-detail-value" id="modal-class">Belum Ditentukan</span>
+            </div>
+            <div class="modal-detail-row">
+              <span class="modal-detail-label" data-i18n="modal.institutionLabel">Institusi</span>
+              <span class="modal-detail-value" data-i18n="modal.institutionValue">Universitas Dipa Makassar</span>
+            </div>
+          </div>
+
+          <!-- Editorial Pull-Quote -->
+          <div id="modal-quote-wrap" class="modal-quote-wrap" style="display: none;">
+            <p class="modal-quote" id="modal-quote"></p>
+          </div>
+
+          <!-- Instagram Profile Action -->
+          <div id="modal-social" style="display: none;">
+            <a
+              href="#"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="modal-social-btn"
+              id="modal-social-btn"
+            >
+              <span data-i18n="modal.igBtnText">Instagram Profile</span>
+              <span aria-hidden="true">↗</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Minimalist Footer -->
+    <footer class="footer">
+      <div class="container footer-inner">
+        <div class="footer-brand">
+          <div class="footer-logos">
+            <img src="./assets/images/logos/undipa.svg" alt="Logo UNDIPA" class="footer-logo-img" />
+            <img src="./assets/images/logos/sistem_informasi.svg" alt="Logo Sistem Informasi" class="footer-logo-img" />
+          </div>
+          <div class="footer-title">SI '26</div>
+          <div class="footer-institution" data-i18n="footer.institution">Sistem Informasi · Universitas Dipa Makassar</div>
+        </div>
+        <div class="footer-copy">
+          <span data-i18n="footer.rights">&copy; 2026 SI '26. All rights reserved.</span>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Application Scripts -->
+    <script src="./js/data.js"></script>
+    <script src="./js/app.js"></script>
+  </body>
+</html>
